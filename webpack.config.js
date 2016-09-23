@@ -1,10 +1,7 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
-  entry: './example.js',
+  entry: './app.js',
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '',
@@ -13,25 +10,21 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /\.h(andle)?b(ar)?s$/,
-        loader: 'handlebars',
+        loader: 'handlebars-loader',
         query: {
           partialDirs: [
             path.join(__dirname, 'src', 'templates', 'partials'),
           ],
+          helperDirs: [
+            path.join(__dirname, 'src', 'templates', 'helpers'),
+          ]
         }
       },
     ]
   },
-  
+
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      // favicon: 'favicon.ico',
-      template: 'index.hbs',
-      title: 'Handlebars demo'
-    }),
-    new ExtractTextPlugin('styles.css')
+    // new ExtractTextPlugin('styles.css')
   ]
 };
