@@ -1,5 +1,9 @@
 # ... Work in Progress ...  
 
+2013-05-25 add multiple entries A/index, B/index linked in /index
+
+2016-09-23 copied stuff from handlebars-loader, simple weback
+
 
 http://stackoverflow.com/questions/18909803/configuring-the-generated-name-of-precompiled-handlebars-templates?rq=1
 
