@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "rootIndex": "gulp rootIndex",
+    "render": "gulp rootIndex && gulp renderLang",
     "quark": "gulp task --gulpfile myfile.js"
   },
   "repository": {
